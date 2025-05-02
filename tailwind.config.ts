@@ -63,13 +63,15 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Excleria specific colors
+				// Excleria specific colors - updating with more orange tones
 				excleria: {
-					blue: '#1EAEDB',
+					orange: '#FF7A00',      // Primary orange
+					deeporange: '#E05F00',  // Darker orange
+					lightorange: '#FFAA66', // Lighter orange
+					blue: '#1EAEDB',        // Keeping blue as accent
 					skyblue: '#33C3F0',
-					brightblue: '#0FA0CE',
-					lightgray: '#F3F3F3',
-					coolgray: '#AAADB0',
+					cream: '#FFF3E0',       // Cream instead of white
+					beige: '#FFF8DC',       // Beige for backgrounds
 				}
 			},
 			borderRadius: {
