@@ -47,7 +47,7 @@ const HeroSection = () => {
               backgroundSize: 'cover',
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-orange-900/50 to-black/50" />
+          <div className="absolute inset-0 bg-black bg-opacity-50" />
         </div>
       ))}
 
@@ -60,7 +60,7 @@ const HeroSection = () => {
           Excleria Logistics provides seamless transportation and logistics solutions across India with technology-driven efficiency.
         </p>
         <Button 
-          className="bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-8 text-lg rounded-md animate-fade-in"
+          className="bg-excleria-blue hover:bg-excleria-brightblue text-white font-bold py-3 px-8 text-lg rounded-md animate-fade-in"
         >
           Get Started
         </Button>
@@ -72,7 +72,7 @@ const HeroSection = () => {
               key={index}
               onClick={() => setCurrentIndex(index)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-orange-500' : 'bg-white bg-opacity-50'
+                index === currentIndex ? 'bg-excleria-blue' : 'bg-white bg-opacity-50'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

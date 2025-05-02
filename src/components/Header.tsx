@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, Truck } from "lucide-react";
-import { Link } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,67 +26,65 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-gradient-to-r from-orange-100 to-amber-100 shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo and Truck Animation */}
-        <div className="flex items-center">
-          <Link to="/" className="flex items-center">
-            <h1 className="text-3xl font-bold text-orange-600">
-              Excleria<span className="text-gray-800 ml-1">Logistics</span>
-            </h1>
-          </Link>
-        </div>
-          
-        {/* Moving Truck Animation - Now positioned between logo and navigation */}
-        <div className="relative h-6 w-16 overflow-hidden hidden md:block">
-          <div 
-            className="absolute transition-all" 
-            style={{ left: `${truckPosition}%`, transform: 'translateX(-50%)' }}
-          >
-            <Truck 
-              size={24} 
-              className="text-orange-600"
-              style={{ transform: 'scaleX(-1)' }} // Truck facing right
-            />
-          </div>
-        </div>
+        {/* Logo */}
+        <a href="#" className="flex items-center">
+          <h1 className="text-3xl font-bold text-excleria-blue">
+            Excleria<span className="text-gray-800 ml-1">Logistics</span>
+          </h1>
+        </a>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-800 hover:text-orange-600 font-medium">
+          <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium">
             Home
-          </Link>
-          <Link to="/about" className="text-gray-800 hover:text-orange-600 font-medium">
+          </a>
+          <a href="#about" className="text-gray-800 hover:text-excleria-blue font-medium">
             About
-          </Link>
+          </a>
           <div className="relative group">
-            <Link to="/services" className="text-gray-800 hover:text-orange-600 font-medium flex items-center">
+            <a href="#services" className="text-gray-800 hover:text-excleria-blue font-medium flex items-center">
               Services
               <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
               </svg>
-            </Link>
-            <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-orange-50 shadow-lg rounded-md py-2 z-50">
-              <Link to="/services/b2c" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+            </a>
+            <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white shadow-lg rounded-md py-2 z-50">
+              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
                 B2C Services
-              </Link>
-              <Link to="/services/b2b" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+              </a>
+              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
                 B2B Services
-              </Link>
-              <Link to="/services/same-day" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+              </a>
+              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
                 Same-Day Delivery
-              </Link>
-              <Link to="/services/packers" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+              </a>
+              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
                 Packers & Movers
-              </Link>
+              </a>
             </div>
           </div>
-          <Link to="/careers" className="text-gray-800 hover:text-orange-600 font-medium">
+          <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium">
             Careers
-          </Link>
-          <Link to="/contact" className="text-gray-800 hover:text-orange-600 font-medium">
+          </a>
+          <a href="#contact" className="text-gray-800 hover:text-excleria-blue font-medium">
             Contact Us
-          </Link>
+          </a>
+          
+          {/* Moving Truck Animation */}
+          <div className="relative h-6 w-16 overflow-hidden">
+            <div 
+              className="absolute transition-all" 
+              style={{ left: `${truckPosition}%`, transform: 'translateX(-50%)' }}
+            >
+              <Truck 
+                size={24} 
+                className="text-orange-500"
+                style={{ transform: 'scaleX(-1)' }} // Truck facing right
+              />
+            </div>
+          </div>
         </nav>
 
         {/* Mobile menu button */}
@@ -97,35 +94,37 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="absolute top-full left-0 right-0 bg-orange-50 shadow-md py-4 md:hidden z-50">
+          <div className="absolute top-full left-0 right-0 bg-white shadow-md py-4 md:hidden z-50">
             <nav className="flex flex-col space-y-4 px-4">
-              <Link to="/" className="text-gray-800 hover:text-orange-600 font-medium" onClick={toggleMenu}>
+              <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
                 Home
-              </Link>
-              <Link to="/about" className="text-gray-800 hover:text-orange-600 font-medium" onClick={toggleMenu}>
+              </a>
+              <a href="#about" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
                 About
-              </Link>
-              <Link to="/services" className="text-gray-800 hover:text-orange-600 font-medium" onClick={toggleMenu}>
+              </a>
+              <a href="#services" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
                 Services
-              </Link>
-              <Link to="/services/b2c" className="pl-4 text-gray-700 hover:text-orange-600 font-medium" onClick={toggleMenu}>
-                - B2C Services
-              </Link>
-              <Link to="/services/b2b" className="pl-4 text-gray-700 hover:text-orange-600 font-medium" onClick={toggleMenu}>
-                - B2B Services
-              </Link>
-              <Link to="/services/same-day" className="pl-4 text-gray-700 hover:text-orange-600 font-medium" onClick={toggleMenu}>
-                - Same-Day Delivery
-              </Link>
-              <Link to="/services/packers" className="pl-4 text-gray-700 hover:text-orange-600 font-medium" onClick={toggleMenu}>
-                - Packers & Movers
-              </Link>
-              <Link to="/careers" className="text-gray-800 hover:text-orange-600 font-medium" onClick={toggleMenu}>
+              </a>
+              <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
                 Careers
-              </Link>
-              <Link to="/contact" className="text-gray-800 hover:text-orange-600 font-medium" onClick={toggleMenu}>
+              </a>
+              <a href="#contact" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
                 Contact Us
-              </Link>
+              </a>
+              
+              {/* Moving Truck Animation (Mobile) */}
+              <div className="relative h-6 w-full overflow-hidden">
+                <div 
+                  className="absolute transition-all" 
+                  style={{ left: `${truckPosition}%`, transform: 'translateX(-50%)' }}
+                >
+                  <Truck 
+                    size={24} 
+                    className="text-orange-500"
+                    style={{ transform: 'scaleX(-1)' }} // Truck facing right
+                  />
+                </div>
+              </div>
             </nav>
           </div>
         )}

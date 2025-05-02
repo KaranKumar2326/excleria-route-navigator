@@ -7,65 +7,65 @@
 
 @layer base {
   :root {
-    --background: 30 30% 96%; /* Warm beige background instead of white */
-    --foreground: 25 84% 20%;
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
 
-    --card: 39 100% 97%; /* Light warm background for cards */
-    --card-foreground: 20 84% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
 
-    --popover: 30 30% 96%;
-    --popover-foreground: 20 84% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 25 95% 53%; /* Orange primary color */
+    --primary: 195 83% 49%; /* Excleria blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 195 83% 49%; /* Blue as secondary color */
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
 
-    --muted: 25 10% 90%;
-    --muted-foreground: 25 8% 46%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 195 83% 49%; /* Blue accent */
+    --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 25 20% 85%;
-    --input: 25 20% 85%;
-    --ring: 25 95% 53%; /* Orange ring */
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 195 83% 49%; /* Excleria blue */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 20 30% 10%;
-    --foreground: 30 30% 90%;
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
 
-    --card: 20 30% 12%;
-    --card-foreground: 30 30% 90%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 20 30% 12%;
-    --popover-foreground: 30 30% 90%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 25 95% 53%; /* Orange primary */
-    --primary-foreground: 0 0% 100%;
+    --primary: 195 83% 49%; /* Excleria blue */
+    --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 195 83% 49%; /* Blue secondary */
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 20 20% 20%;
-    --muted-foreground: 20 10% 70%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 195 83% 49%; /* Blue accent */
-    --accent-foreground: 0 0% 100%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 20 20% 30%;
-    --input: 20 20% 30%;
-    --ring: 25 95% 53%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
   }
 }
 
@@ -80,7 +80,7 @@
 }
 
 .service-card {
-  @apply bg-gradient-to-br from-orange-50 to-amber-100 p-6 rounded-lg shadow-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1;
+  @apply bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1;
 }
 
 .section-container {
@@ -88,12 +88,12 @@
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-10 text-center relative text-orange-700;
+  @apply text-3xl md:text-4xl font-bold mb-10 text-center relative;
 }
 
 .section-title::after {
   content: '';
-  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-orange-500 to-excleria-blue mt-2;
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-excleria-blue to-orange-500 mt-2;
 }
 
 /* Hide scrollbars for scrolling sections */
@@ -118,56 +118,4 @@
 
 .truck-animation {
   animation: drive 10s linear infinite;
-}
-
-/* Vibrant background patterns */
-.bg-pattern-1 {
-  background-image: linear-gradient(135deg, rgba(255,170,102,0.2) 25%, transparent 25%), 
-                    linear-gradient(225deg, rgba(255,170,102,0.2) 25%, transparent 25%), 
-                    linear-gradient(45deg, rgba(255,170,102,0.2) 25%, transparent 25%), 
-                    linear-gradient(315deg, rgba(255,170,102,0.2) 25%, transparent 25%);
-  background-position: 10px 0, 10px 0, 0 0, 0 0;
-  background-size: 20px 20px;
-  background-repeat: repeat;
-}
-
-.bg-pattern-2 {
-  background-color: #FFF3E0;
-  background-image: linear-gradient(90deg, rgba(255,122,0,0.1) 0px, rgba(255,122,0,0.1) 1px, transparent 1px, transparent 30px),
-                    linear-gradient(rgba(255,122,0,0.1) 0px, rgba(255,122,0,0.1) 1px, transparent 1px, transparent 30px);
-  background-size: 30px 30px;
-}
-
-.gradient-bg {
-  background: linear-gradient(to right, rgba(255,122,0,0.05), rgba(30,174,219,0.05));
-}
-
-/* Enhanced card styles */
-.enhanced-card {
-  @apply bg-gradient-to-br from-orange-50 to-amber-100 rounded-xl shadow-lg border border-orange-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
-}
-
-/* Service Page Specific Styles */
-.service-hero {
-  @apply bg-gradient-to-br from-orange-500 to-orange-700 text-white relative overflow-hidden;
-  min-height: 40vh;
-}
-
-.service-hero::after {
-  content: '';
-  @apply absolute inset-0 bg-black opacity-20;
-}
-
-.service-hero-content {
-  @apply relative z-10 container mx-auto px-4 py-16 flex flex-col justify-center h-full;
-  min-height: inherit;
-}
-
-/* Contact form styling */
-.contact-input {
-  @apply bg-orange-50 bg-opacity-80 border border-orange-200 rounded-md p-3 w-full focus:ring-2 focus:ring-orange-500 focus:border-transparent transition duration-200;
-}
-
-.contact-section {
-  @apply bg-gradient-to-r from-amber-50 to-orange-100 rounded-xl shadow-lg overflow-hidden;
 }

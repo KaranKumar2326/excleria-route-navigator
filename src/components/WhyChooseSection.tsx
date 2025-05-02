@@ -28,49 +28,49 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="section-container bg-gradient-to-br from-amber-50 to-orange-100 rounded-xl">
+    <section className="section-container">
       <h2 className="section-title">Why Choose Excleria Logistics</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
         <div>
-          <div className="relative rounded-lg overflow-hidden h-full min-h-[400px] shadow-xl">
+          <div className="relative rounded-lg overflow-hidden h-full min-h-[400px]">
             <img 
               src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop"
               alt="Excleria Logistics Operations in India" 
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-orange-800/80 via-orange-700/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
             <div className="absolute bottom-0 left-0 p-6 text-white">
               <h3 className="text-2xl font-bold mb-2">Excellence in Logistics</h3>
-              <p className="text-white/90">
+              <p className="text-white/80">
                 Our commitment to excellence and innovation drives everything we do
               </p>
             </div>
           </div>
         </div>
         
-        <div className="space-y-6 bg-orange-50 bg-opacity-90 p-8 rounded-xl shadow-lg">
+        <div className="space-y-6">
           {reasons.map((reason, index) => (
-            <div key={index} className="flex hover:bg-orange-100 p-3 rounded-lg transition-colors duration-200">
+            <div key={index} className="flex">
               <div className="mr-4 pt-1">
-                <CheckCircle size={24} className="text-orange-600" />
+                <CheckCircle size={24} className="text-orange-500" />
               </div>
               <div>
-                <h4 className="text-xl font-bold mb-2 text-orange-900">{reason.title}</h4>
-                <p className="text-gray-700">{reason.description}</p>
+                <h4 className="text-xl font-bold mb-2">{reason.title}</h4>
+                <p className="text-gray-600">{reason.description}</p>
               </div>
             </div>
           ))}
           
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
             <Button 
-              className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white px-8 py-6 h-auto text-lg shadow-lg"
+              className="bg-excleria-blue hover:bg-excleria-brightblue text-white px-8 py-6 h-auto text-lg"
             >
               Get Started
             </Button>
             <Button 
               variant="outline" 
-              className="border-2 border-excleria-blue text-excleria-blue hover:bg-excleria-blue hover:text-white px-8 py-6 h-auto text-lg shadow-lg"
+              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 h-auto text-lg"
             >
               <PhoneCall size={20} className="mr-2" />
               Request Call Back
