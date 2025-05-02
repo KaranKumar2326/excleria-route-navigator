@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Menu, Truck } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,14 +12,14 @@ const Header = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Truck animation effect
+  // Truck animation effect - positioned between logo and navigation
   useEffect(() => {
     const interval = setInterval(() => {
       setTruckPosition((prev) => {
         if (prev > 100) {
-          return -20; // Reset truck position when it goes off-screen
+          return 0; // Reset truck position when it goes off-screen
         }
-        return prev + 0.5; // Move truck right
+        return prev + 1; // Move truck right
       });
     }, 30);
 
@@ -26,54 +27,18 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-gradient-to-r from-orange-100 to-orange-50 shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-        {/* Logo */}
-        <a href="#" className="flex items-center">
-          <h1 className="text-3xl font-bold text-excleria-blue">
-            Excleria<span className="text-gray-800 ml-1">Logistics</span>
-          </h1>
-        </a>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium">
-            Home
-          </a>
-          <a href="#about" className="text-gray-800 hover:text-excleria-blue font-medium">
-            About
-          </a>
-          <div className="relative group">
-            <a href="#services" className="text-gray-800 hover:text-excleria-blue font-medium flex items-center">
-              Services
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-              </svg>
-            </a>
-            <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white shadow-lg rounded-md py-2 z-50">
-              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
-                B2C Services
-              </a>
-              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
-                B2B Services
-              </a>
-              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
-                Same-Day Delivery
-              </a>
-              <a href="#services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-excleria-blue hover:text-white">
-                Packers & Movers
-              </a>
-            </div>
-          </div>
-          <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium">
-            Careers
-          </a>
-          <a href="#contact" className="text-gray-800 hover:text-excleria-blue font-medium">
-            Contact Us
-          </a>
+        <div className="flex items-center">
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <h1 className="text-3xl font-bold text-orange-600">
+              Excleria<span className="text-gray-800 ml-1">Logistics</span>
+            </h1>
+          </Link>
           
-          {/* Moving Truck Animation */}
-          <div className="relative h-6 w-16 overflow-hidden">
+          {/* Truck Animation - positioned after logo */}
+          <div className="relative h-8 w-20 ml-4 overflow-hidden">
             <div 
               className="absolute transition-all" 
               style={{ left: `${truckPosition}%`, transform: 'translateX(-50%)' }}
@@ -85,6 +50,44 @@ const Header = () => {
               />
             </div>
           </div>
+        </div>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-8">
+          <Link to="/" className="text-gray-800 hover:text-orange-500 font-medium">
+            Home
+          </Link>
+          <Link to="/about" className="text-gray-800 hover:text-orange-500 font-medium">
+            About
+          </Link>
+          <div className="relative group">
+            <Link to="/" className="text-gray-800 hover:text-orange-500 font-medium flex items-center">
+              Services
+              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </Link>
+            <div className="absolute left-0 mt-2 w-56 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 bg-white shadow-lg rounded-md py-2 z-50">
+              <Link to="/b2c-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+                B2C Services
+              </Link>
+              <Link to="/b2b-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+                B2B Services
+              </Link>
+              <Link to="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+                Same-Day Delivery
+              </Link>
+              <Link to="/" className="block px-4 py-2 text-sm text-gray-700 hover:bg-orange-500 hover:text-white">
+                Packers & Movers
+              </Link>
+            </div>
+          </div>
+          <Link to="/careers" className="text-gray-800 hover:text-orange-500 font-medium">
+            Careers
+          </Link>
+          <Link to="/contact" className="text-gray-800 hover:text-orange-500 font-medium">
+            Contact Us
+          </Link>
         </nav>
 
         {/* Mobile menu button */}
@@ -96,35 +99,24 @@ const Header = () => {
         {isMenuOpen && (
           <div className="absolute top-full left-0 right-0 bg-white shadow-md py-4 md:hidden z-50">
             <nav className="flex flex-col space-y-4 px-4">
-              <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
+              <Link to="/" className="text-gray-800 hover:text-orange-500 font-medium" onClick={toggleMenu}>
                 Home
-              </a>
-              <a href="#about" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
+              </Link>
+              <Link to="/about" className="text-gray-800 hover:text-orange-500 font-medium" onClick={toggleMenu}>
                 About
-              </a>
-              <a href="#services" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
-                Services
-              </a>
-              <a href="#" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
+              </Link>
+              <Link to="/b2c-services" className="text-gray-800 hover:text-orange-500 font-medium" onClick={toggleMenu}>
+                B2C Services
+              </Link>
+              <Link to="/b2b-services" className="text-gray-800 hover:text-orange-500 font-medium" onClick={toggleMenu}>
+                B2B Services
+              </Link>
+              <Link to="/" className="text-gray-800 hover:text-orange-500 font-medium" onClick={toggleMenu}>
                 Careers
-              </a>
-              <a href="#contact" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
+              </Link>
+              <Link to="/contact" className="text-gray-800 hover:text-orange-500 font-medium" onClick={toggleMenu}>
                 Contact Us
-              </a>
-              
-              {/* Moving Truck Animation (Mobile) */}
-              <div className="relative h-6 w-full overflow-hidden">
-                <div 
-                  className="absolute transition-all" 
-                  style={{ left: `${truckPosition}%`, transform: 'translateX(-50%)' }}
-                >
-                  <Truck 
-                    size={24} 
-                    className="text-orange-500"
-                    style={{ transform: 'scaleX(-1)' }} // Truck facing right
-                  />
-                </div>
-              </div>
+              </Link>
             </nav>
           </div>
         )}
