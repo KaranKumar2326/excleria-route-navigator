@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { CheckCircle } from 'lucide-react';
+import { CheckCircle, PhoneCall } from 'lucide-react';
+import { Button } from "@/components/ui/button";
 
 const WhyChooseSection = () => {
   const reasons = [
@@ -34,8 +35,8 @@ const WhyChooseSection = () => {
         <div>
           <div className="relative rounded-lg overflow-hidden h-full min-h-[400px]">
             <img 
-              src="https://images.unsplash.com/photo-1616432043562-3671ea2e5242?q=80&w=1974&auto=format&fit=crop"
-              alt="Excleria Logistics Operations" 
+              src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop"
+              alt="Excleria Logistics Operations in India" 
               className="absolute inset-0 h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
@@ -52,7 +53,7 @@ const WhyChooseSection = () => {
           {reasons.map((reason, index) => (
             <div key={index} className="flex">
               <div className="mr-4 pt-1">
-                <CheckCircle size={24} className="text-excleria-blue" />
+                <CheckCircle size={24} className="text-orange-500" />
               </div>
               <div>
                 <h4 className="text-xl font-bold mb-2">{reason.title}</h4>
@@ -60,6 +61,21 @@ const WhyChooseSection = () => {
               </div>
             </div>
           ))}
+          
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
+            <Button 
+              className="bg-excleria-blue hover:bg-excleria-brightblue text-white px-8 py-6 h-auto text-lg"
+            >
+              Get Started
+            </Button>
+            <Button 
+              variant="outline" 
+              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 h-auto text-lg"
+            >
+              <PhoneCall size={20} className="mr-2" />
+              Request Call Back
+            </Button>
+          </div>
         </div>
       </div>
     </section>

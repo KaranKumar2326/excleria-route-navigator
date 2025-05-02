@@ -9,6 +9,7 @@ import TechFeaturesSection from '../components/TechFeaturesSection';
 import NetworkMapSection from '../components/NetworkMapSection';
 import WhyChooseSection from '../components/WhyChooseSection';
 import TestimonialsSection from '../components/TestimonialsSection';
+import BrandsSection from '../components/BrandsSection';
 
 const Index = () => {
   return (
@@ -16,11 +17,12 @@ const Index = () => {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <AboutSection />
         <ServicesSection />
+        <AboutSection />
         <TechFeaturesSection />
         <NetworkMapSection />
         <WhyChooseSection />
+        <BrandsSection />
         <TestimonialsSection />
       </main>
       <Footer />

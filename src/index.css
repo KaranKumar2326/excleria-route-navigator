@@ -93,5 +93,29 @@
 
 .section-title::after {
   content: '';
-  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-excleria-blue mt-2;
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-excleria-blue to-orange-500 mt-2;
+}
+
+/* Hide scrollbars for scrolling sections */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;             /* Chrome, Safari and Opera */
+}
+
+/* Truck animation */
+@keyframes drive {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.truck-animation {
+  animation: drive 10s linear infinite;
 }

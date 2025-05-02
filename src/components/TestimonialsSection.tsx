@@ -33,6 +33,22 @@ const testimonials = [
     role: "Customer Service Manager",
     image: "https://randomuser.me/api/portraits/women/26.jpg",
     quote: "The packers and movers service from Excleria ensured a seamless relocation of our office. Their professional handling and attention to detail were impressive."
+  },
+  {
+    id: 5,
+    name: "Sanjay Mehta",
+    company: "Mumbai Retail Group",
+    role: "CEO",
+    image: "https://randomuser.me/api/portraits/men/45.jpg",
+    quote: "Partnering with Excleria Logistics has been a game-changer for our distribution network. Their expertise in handling last-mile delivery in crowded Mumbai areas is unmatched."
+  },
+  {
+    id: 6,
+    name: "Deepika Reddy",
+    company: "Bangalore Fashion Hub",
+    role: "Logistics Manager",
+    image: "https://randomuser.me/api/portraits/women/66.jpg",
+    quote: "The technology integration Excleria provides has streamlined our inventory management and simplified our order fulfillment process across south India."
   }
 ];
 
@@ -53,7 +69,7 @@ const TestimonialsSection = () => {
   }, [isPaused]);
 
   return (
-    <section className="section-container bg-excleria-lightgray">
+    <section className="section-container bg-gradient-to-br from-excleria-lightgray to-orange-50">
       <h2 className="section-title">What Our Clients Say</h2>
       
       <div className="mt-16 relative overflow-hidden" 
@@ -69,7 +85,7 @@ const TestimonialsSection = () => {
                 index === activeIndex ? 'opacity-100' : 'opacity-0 absolute'
               }`}
             >
-              <div className="bg-white rounded-lg shadow-md p-8 md:p-12">
+              <div className="bg-white rounded-lg shadow-md p-8 md:p-12 border-t-4 border-orange-500">
                 <div className="flex flex-col md:flex-row items-center gap-8">
                   <div className="md:w-1/4 flex-shrink-0">
                     <div className="relative">
@@ -79,14 +95,14 @@ const TestimonialsSection = () => {
                         className="w-32 h-32 rounded-full mx-auto object-cover border-4 border-excleria-blue" 
                       />
                       <div className="absolute -bottom-2 -right-2 bg-white p-1 rounded-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#1EAEDB" className="w-6 h-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FF8C00" className="w-6 h-6">
                           <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.039 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" />
                         </svg>
                       </div>
                     </div>
                     <div className="text-center mt-4">
                       <h4 className="font-bold text-lg">{testimonial.name}</h4>
-                      <p className="text-excleria-blue">{testimonial.role}</p>
+                      <p className="text-orange-500">{testimonial.role}</p>
                       <p className="text-gray-500 text-sm">{testimonial.company}</p>
                     </div>
                   </div>
@@ -108,7 +124,7 @@ const TestimonialsSection = () => {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`w-3 h-3 rounded-full transition-colors ${
-                index === activeIndex ? 'bg-excleria-blue' : 'bg-gray-300'
+                index === activeIndex ? 'bg-orange-500' : 'bg-gray-300'
               }`}
               aria-label={`Go to testimonial ${index + 1}`}
             />

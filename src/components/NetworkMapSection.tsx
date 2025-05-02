@@ -7,10 +7,10 @@ const NetworkMapSection = () => {
   
   const regions = [
     { id: 'north', name: 'North', centers: 12, color: '#1EAEDB' },
-    { id: 'south', name: 'South', centers: 10, color: '#33C3F0' },
+    { id: 'south', name: 'South', centers: 10, color: '#FF8C00' }, // Changed to orange
     { id: 'east', name: 'East', centers: 8, color: '#0FA0CE' },
     { id: 'west', name: 'West', centers: 9, color: '#1EAEDB' },
-    { id: 'northeast', name: 'North-East', centers: 3, color: '#33C3F0' },
+    { id: 'northeast', name: 'North-East', centers: 3, color: '#FF8C00' }, // Changed to orange
   ];
 
   return (
@@ -32,7 +32,7 @@ const NetworkMapSection = () => {
                   key={region.id}
                   className={`flex items-center justify-between w-full p-4 rounded-lg border transition-colors ${
                     activeRegion === region.id || activeRegion === 'all'
-                      ? 'border-excleria-blue bg-excleria-lightgray'
+                      ? 'border-orange-500 bg-orange-50'
                       : 'border-gray-200 hover:bg-gray-50'
                   }`}
                   onClick={() => setActiveRegion(region.id === activeRegion ? 'all' : region.id)}
@@ -42,7 +42,7 @@ const NetworkMapSection = () => {
                     <span className="font-medium">{region.name} Region</span>
                   </div>
                   <div className="flex items-center">
-                    <span className="bg-excleria-blue text-white py-1 px-3 rounded-full text-sm">
+                    <span className="bg-orange-500 text-white py-1 px-3 rounded-full text-sm">
                       {region.centers} centers
                     </span>
                   </div>
@@ -54,12 +54,12 @@ const NetworkMapSection = () => {
         
         <div className="lg:w-3/5">
           <div className="bg-white p-4 rounded-lg shadow-md h-full">
-            {/* Map of India - This would typically be an interactive component */}
+            {/* Updated with correct Indian map that includes all territories */}
             <div className="relative h-[500px] bg-excleria-lightgray rounded-lg overflow-hidden flex items-center justify-center">
               <div className="text-center">
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_location_map.svg" 
-                  alt="Map of India with Excleria's fulfillment centers" 
+                  src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_map_blank.svg" 
+                  alt="Complete map of India with Excleria's fulfillment centers" 
                   className="max-w-full max-h-full object-contain"
                 />
                 <div className="absolute inset-0 flex items-center justify-center">

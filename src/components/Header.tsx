@@ -1,14 +1,29 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
-import { Menu } from "lucide-react";
+import { Menu, Truck } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [truckPosition, setTruckPosition] = useState(0);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Truck animation effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTruckPosition((prev) => {
+        if (prev > 100) {
+          return -20; // Reset truck position when it goes off-screen
+        }
+        return prev + 0.5; // Move truck right
+      });
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <header className="bg-white shadow-sm sticky top-0 z-50">
@@ -56,6 +71,20 @@ const Header = () => {
           <a href="#contact" className="text-gray-800 hover:text-excleria-blue font-medium">
             Contact Us
           </a>
+          
+          {/* Moving Truck Animation */}
+          <div className="relative h-6 w-16 overflow-hidden">
+            <div 
+              className="absolute transition-all" 
+              style={{ left: `${truckPosition}%`, transform: 'translateX(-50%)' }}
+            >
+              <Truck 
+                size={24} 
+                className="text-orange-500"
+                style={{ transform: 'scaleX(-1)' }} // Truck facing right
+              />
+            </div>
+          </div>
         </nav>
 
         {/* Mobile menu button */}
@@ -82,6 +111,20 @@ const Header = () => {
               <a href="#contact" className="text-gray-800 hover:text-excleria-blue font-medium" onClick={toggleMenu}>
                 Contact Us
               </a>
+              
+              {/* Moving Truck Animation (Mobile) */}
+              <div className="relative h-6 w-full overflow-hidden">
+                <div 
+                  className="absolute transition-all" 
+                  style={{ left: `${truckPosition}%`, transform: 'translateX(-50%)' }}
+                >
+                  <Truck 
+                    size={24} 
+                    className="text-orange-500"
+                    style={{ transform: 'scaleX(-1)' }} // Truck facing right
+                  />
+                </div>
+              </div>
             </nav>
           </div>
         )}
