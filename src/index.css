@@ -7,10 +7,10 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 40% 97%; /* Light blue-gray background instead of white */
     --foreground: 222.2 84% 4.9%;
 
-    --card: 0 0% 100%;
+    --card: 39 100% 97%; /* Light warm background for cards */
     --card-foreground: 222.2 84% 4.9%;
 
     --popover: 0 0% 100%;
@@ -19,20 +19,20 @@
     --primary: 195 83% 49%; /* Excleria blue */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 25 95% 53%; /* Orange secondary color */
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 210 40% 96.1%;
+    --muted: 210 40% 93%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 210 40% 96.1%;
+    --accent: 25 95% 53%; /* Orange accent */
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
+    --border: 214.3 31.8% 85%;
+    --input: 214.3 31.8% 85%;
     --ring: 195 83% 49%; /* Excleria blue */
 
     --radius: 0.5rem;
@@ -51,13 +51,13 @@
     --primary: 195 83% 49%; /* Excleria blue */
     --primary-foreground: 222.2 47.4% 11.2%;
 
-    --secondary: 217.2 32.6% 17.5%;
+    --secondary: 25 95% 53%; /* Orange secondary */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
 
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 25 95% 53%; /* Orange accent */
     --accent-foreground: 210 40% 98%;
 
     --destructive: 0 62.8% 30.6%;
@@ -80,7 +80,7 @@
 }
 
 .service-card {
-  @apply bg-white p-6 rounded-lg shadow-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1;
+  @apply bg-gradient-to-br from-white to-orange-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1;
 }
 
 .section-container {
@@ -119,3 +119,56 @@
 .truck-animation {
   animation: drive 10s linear infinite;
 }
+
+/* Vibrant background patterns */
+.bg-pattern-1 {
+  background-image: linear-gradient(135deg, rgba(255,207,139,0.2) 25%, transparent 25%), 
+                    linear-gradient(225deg, rgba(255,207,139,0.2) 25%, transparent 25%), 
+                    linear-gradient(45deg, rgba(255,207,139,0.2) 25%, transparent 25%), 
+                    linear-gradient(315deg, rgba(255,207,139,0.2) 25%, transparent 25%);
+  background-position: 10px 0, 10px 0, 0 0, 0 0;
+  background-size: 20px 20px;
+  background-repeat: repeat;
+}
+
+.bg-pattern-2 {
+  background-color: #f8fafc;
+  background-image: linear-gradient(90deg, rgba(30,174,219,0.1) 0px, rgba(30,174,219,0.1) 1px, transparent 1px, transparent 30px),
+                    linear-gradient(rgba(30,174,219,0.1) 0px, rgba(30,174,219,0.1) 1px, transparent 1px, transparent 30px);
+  background-size: 30px 30px;
+}
+
+.gradient-bg {
+  background: linear-gradient(to right, rgba(30,174,219,0.05), rgba(255,153,51,0.05));
+}
+
+/* Enhanced card styles */
+.enhanced-card {
+  @apply bg-gradient-to-br from-white to-orange-50 rounded-xl shadow-lg border border-orange-100 overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+}
+
+/* Service Page Specific Styles */
+.service-hero {
+  @apply bg-gradient-to-br from-excleria-blue to-blue-700 text-white relative overflow-hidden;
+  min-height: 40vh;
+}
+
+.service-hero::after {
+  content: '';
+  @apply absolute inset-0 bg-black opacity-20;
+}
+
+.service-hero-content {
+  @apply relative z-10 container mx-auto px-4 py-16 flex flex-col justify-center h-full;
+  min-height: inherit;
+}
+
+/* Contact form styling */
+.contact-input {
+  @apply bg-white bg-opacity-80 border border-gray-300 rounded-md p-3 w-full focus:ring-2 focus:ring-excleria-blue focus:border-transparent transition duration-200;
+}
+
+.contact-section {
+  @apply bg-gradient-to-r from-blue-50 to-orange-50 rounded-xl shadow-lg overflow-hidden;
+}
+

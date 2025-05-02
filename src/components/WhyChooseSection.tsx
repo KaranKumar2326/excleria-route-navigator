@@ -28,18 +28,18 @@ const WhyChooseSection = () => {
   ];
 
   return (
-    <section className="section-container">
+    <section className="section-container bg-gradient-to-br from-blue-50 to-orange-50 rounded-xl">
       <h2 className="section-title">Why Choose Excleria Logistics</h2>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16">
         <div>
-          <div className="relative rounded-lg overflow-hidden h-full min-h-[400px]">
+          <div className="relative rounded-lg overflow-hidden h-full min-h-[400px] shadow-xl">
             <img 
               src="https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop"
               alt="Excleria Logistics Operations in India" 
               className="absolute inset-0 h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent" />
             <div className="absolute bottom-0 left-0 p-6 text-white">
               <h3 className="text-2xl font-bold mb-2">Excellence in Logistics</h3>
               <p className="text-white/80">
@@ -49,9 +49,9 @@ const WhyChooseSection = () => {
           </div>
         </div>
         
-        <div className="space-y-6">
+        <div className="space-y-6 bg-white bg-opacity-75 p-8 rounded-xl shadow-lg">
           {reasons.map((reason, index) => (
-            <div key={index} className="flex">
+            <div key={index} className="flex hover:bg-orange-50 p-3 rounded-lg transition-colors duration-200">
               <div className="mr-4 pt-1">
                 <CheckCircle size={24} className="text-orange-500" />
               </div>
@@ -64,13 +64,13 @@ const WhyChooseSection = () => {
           
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mt-8">
             <Button 
-              className="bg-excleria-blue hover:bg-excleria-brightblue text-white px-8 py-6 h-auto text-lg"
+              className="bg-gradient-to-r from-excleria-blue to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white px-8 py-6 h-auto text-lg shadow-lg"
             >
               Get Started
             </Button>
             <Button 
               variant="outline" 
-              className="border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 h-auto text-lg"
+              className="border-2 border-orange-500 text-orange-500 hover:bg-orange-500 hover:text-white px-8 py-6 h-auto text-lg shadow-lg"
             >
               <PhoneCall size={20} className="mr-2" />
               Request Call Back
