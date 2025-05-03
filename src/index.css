@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
@@ -16,24 +15,24 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 24 100% 50%; /* Orange primary */
+    --primary: 184 85% 40%; /* Teal primary */
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 20 100% 94%; /* Light orange secondary */
-    --secondary-foreground: 20 100% 30%;
+    --secondary: 184 60% 96%; /* Light teal secondary */
+    --secondary-foreground: 184 85% 25%;
 
-    --muted: 20 100% 96%;
+    --muted: 184 60% 97%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 20 100% 94%;
-    --accent-foreground: 20 100% 30%;
+    --accent: 184 60% 96%;
+    --accent-foreground: 184 85% 25%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 20 100% 85%;
-    --input: 20 100% 85%;
-    --ring: 24 100% 50%; /* Orange ring */
+    --border: 184 30% 85%;
+    --input: 184 30% 85%;
+    --ring: 184 85% 40%; /* Teal ring */
 
     --radius: 0.5rem;
   }
@@ -48,7 +47,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 24 100% 50%; /* Orange primary */
+    --primary: 184 85% 40%; /* Teal primary */
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -75,12 +74,12 @@
   }
 
   body {
-    @apply bg-orange-50 text-foreground font-sans;
+    @apply bg-slate-50 text-foreground font-sans; /* Changed from bg-orange-50 to bg-slate-50 */
   }
 }
 
 .service-card {
-  @apply bg-gradient-to-br from-white to-orange-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1;
+  @apply bg-gradient-to-br from-white to-slate-50 p-6 rounded-lg shadow-md transition-transform duration-300 hover:shadow-xl hover:-translate-y-1; /* Changed from to-orange-50 */
 }
 
 .section-container {
@@ -88,12 +87,12 @@
 }
 
 .section-title {
-  @apply text-3xl md:text-4xl font-bold mb-10 text-center relative text-orange-600;
+  @apply text-3xl md:text-4xl font-bold mb-10 text-center relative text-primary; /* Changed from text-orange-600 to text-primary */
 }
 
 .section-title::after {
   content: '';
-  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-orange-500 to-orange-300 mt-2;
+  @apply absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-primary to-primary/70 mt-2; /* Changed from orange gradient to primary */
 }
 
 /* Hide scrollbars for scrolling sections */
@@ -122,7 +121,7 @@
 
 /* Button Gradient */
 .btn-gradient {
-  @apply bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white;
+  @apply bg-gradient-to-r from-primary to-primary/90 hover:from-primary/90 hover:to-primary text-white; /* Changed from orange gradient to primary */
 }
 
 /* Card Hover Effects */
@@ -132,10 +131,10 @@
 
 /* Enhanced Features */
 .feature-icon {
-  @apply w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-400 rounded-full flex items-center justify-center text-white shadow-md mb-4 mx-auto;
+  @apply w-16 h-16 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white shadow-md mb-4 mx-auto; /* Changed from orange gradient to primary */
 }
 
 /* Testimonial Cards */
 .testimonial-card {
-  @apply bg-gradient-to-br from-white to-orange-50 p-6 rounded-lg shadow-md;
+  @apply bg-gradient-to-br from-white to-slate-50 p-6 rounded-lg shadow-md; /* Changed from to-orange-50 */
 }

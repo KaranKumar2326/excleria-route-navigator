@@ -10,6 +10,7 @@ import B2CServices from "./pages/B2CServices";
 import B2BServices from "./pages/B2BServices";
 import Contact from "./pages/Contact";
 import ChatbotIcon from "./components/ChatbotIcon";
+import FloatingEnquireButton from "./components/FloatingEnquireButton";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/b2c-services" element={<B2CServices />} />
@@ -28,6 +30,8 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <ChatbotIcon />
+        <FloatingEnquireButton />
+        
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

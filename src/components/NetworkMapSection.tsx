@@ -58,36 +58,13 @@ const NetworkMapSection = () => {
             <div className="relative h-[500px] bg-excleria-lightgray rounded-lg overflow-hidden flex items-center justify-center">
               <div className="text-center">
                 <img 
-                  src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_map_blank.svg" 
+                // src public/image.png
+                src ="/image.png"
+                  // src="https://upload.wikimedia.org/wikipedia/commons/4/41/India_map_blank.svg" 
                   alt="Complete map of India with Excleria's fulfillment centers" 
                   className="max-w-full max-h-full object-contain"
                 />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="relative w-[80%] h-[80%]">
-                    {/* Map pins - would be positioned precisely in a real implementation */}
-                    {regions.map((region) => (
-                      (activeRegion === 'all' || activeRegion === region.id) && (
-                        Array(region.centers).fill(0).map((_, idx) => (
-                          <div 
-                            key={`${region.id}-${idx}`}
-                            className="absolute animate-pulse"
-                            style={{
-                              top: `${20 + Math.random() * 60}%`,
-                              left: `${20 + Math.random() * 60}%`,
-                              transform: 'translate(-50%, -50%)',
-                              zIndex: activeRegion === region.id ? 20 : 10,
-                            }}
-                          >
-                            <div 
-                              className="w-3 h-3 rounded-full"
-                              style={{ backgroundColor: region.color }} 
-                            />
-                          </div>
-                        ))
-                      )
-                    ))}
-                  </div>
-                </div>
+                
               </div>
               <div className="absolute bottom-4 left-4 bg-white p-2 rounded shadow-sm">
                 <p className="text-xs text-gray-500">

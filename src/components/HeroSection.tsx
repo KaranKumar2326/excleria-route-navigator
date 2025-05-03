@@ -1,8 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 
-// Hero images (normally these would be real imported images)
+// Hero images (using placeholder images for demonstration)
 const heroImages = [
   {
     src: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?q=80&w=2070&auto=format&fit=crop",
@@ -31,7 +30,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative h-[600px] md:h-[700px] overflow-hidden">
+    <div className="relative h-64 sm:h-96 md:h-128 lg:h-screen max-h-screen overflow-hidden">
       {/* Slideshow */}
       {heroImages.map((image, index) => (
         <div
@@ -40,39 +39,38 @@ const HeroSection = () => {
             index === currentIndex ? 'opacity-100' : 'opacity-0'
           }`}
         >
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ 
-              backgroundImage: `url(${image.src})`,
-              backgroundSize: 'cover',
-            }}
+          <img 
+            src={image.src}
+            alt={image.alt}
+            className="object-cover w-full h-full"
           />
           <div className="absolute inset-0 bg-black bg-opacity-50" />
         </div>
       ))}
 
       {/* Content */}
-      <div className="relative h-full flex flex-col items-center justify-center text-center text-white container mx-auto px-4 z-10">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in">
-          Nationwide Reach,<br />Streamlined Solutions
+      <div className="relative h-full flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 lg:px-8 z-10">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-bold mb-2 sm:mb-4 md:mb-6">
+          <span className="block">Nationwide Reach,</span>
+          <span className="block">Streamlined Solutions</span>
         </h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl animate-fade-in">
+        <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 max-w-xs sm:max-w-md md:max-w-lg lg:max-w-2xl mx-auto">
           Excleria Logistics provides seamless transportation and logistics solutions across India with technology-driven efficiency.
         </p>
         <Button 
-          className="bg-excleria-blue hover:bg-excleria-brightblue text-white font-bold py-3 px-8 text-lg rounded-md animate-fade-in"
+          className="bg-blue-600 hover:bg-blue-500 text-white font-bold py-2 px-4 sm:py-3 sm:px-6 md:px-8 text-sm sm:text-base md:text-lg rounded"
         >
           Get Started
         </Button>
 
         {/* Slideshow indicators */}
-        <div className="absolute bottom-8 flex space-x-2">
+        <div className="absolute bottom-4 sm:bottom-6 md:bottom-8 flex space-x-2">
           {heroImages.map((_, index) => (
             <button
               key={index}
               onClick={() => setCurrentIndex(index)}
-              className={`w-3 h-3 rounded-full transition-colors ${
-                index === currentIndex ? 'bg-excleria-blue' : 'bg-white bg-opacity-50'
+              className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-colors ${
+                index === currentIndex ? 'bg-blue-600' : 'bg-white bg-opacity-50'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
