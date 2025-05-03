@@ -55,7 +55,7 @@ const NetworkMapSection = () => {
         <div className="lg:w-3/5">
           <div className="bg-white p-4 rounded-lg shadow-md h-full">
             {/* Updated with correct Indian map that includes all territories */}
-            <div className="relative h-[500px] bg-excleria-lightgray rounded-lg overflow-hidden flex items-center justify-center">
+            <div className="relative max-h-full bg-excleria-lightgray rounded-lg overflow-hidden flex items-center justify-center">
               <div className="text-center">
                 <img 
                 // src public/image.png
